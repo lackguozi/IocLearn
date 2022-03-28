@@ -46,13 +46,13 @@ namespace LuckFramework
             object res =  Activator.CreateInstance(type, ls.ToArray());
             foreach (var prop in type.GetProperties().Where(a => a.IsDefined(typeof(LuckPropertyInjectionAttribute), true)))
             {
-                //Console.WriteLine(prop.Name);
+                
                 Type proptype = prop.PropertyType;
                 string proptypshortename = this.GetShortName2(prop);
                 object propInstance = ReSolveObject(proptype);
                 prop.SetValue(res, propInstance);
                 
-                //Console.WriteLine(prop.Name);
+                
             }
             return res;
             
