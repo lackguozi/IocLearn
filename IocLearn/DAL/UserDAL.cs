@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IocLearn.BLL
 {
-    internal class UserDAL : IUserDAL
+    public class UserDAL : IUserDAL
     {
         private IUserService _userservice;
         public UserDAL(IUserService userservice)
