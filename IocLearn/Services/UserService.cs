@@ -16,5 +16,13 @@ namespace IocLearn.Services
         {
             Console.WriteLine("UserService getuser调用");
         }
+        public void show()
+        {
+            Console.WriteLine("你好我很想你");
+        }
+        public void show1()
+        {
+            Console.WriteLine("show  111121");
+        }
     }
 }

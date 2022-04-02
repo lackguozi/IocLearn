@@ -3,7 +3,9 @@ using IocLearn.DAL;
 using IocLearn.Interface;
 using IocLearn.Services;
 using LuckFramework;
+using LuckFramework.CustomAop;
 using System;
+using LuckFramework.CustomAop;
 
 namespace IocLearn
 {
@@ -11,7 +13,9 @@ namespace IocLearn
     {
         static void Main(string[] args)
         {
-            LuckContainer container = new LuckContainer();
+            #region ioc部分
+
+            /*LuckContainer container = new LuckContainer();
             container.Register<IUserBLL,UserBLL>();
             container.Register<IUserDAL, UserDAL>();
             container.Register<IUserService, UserService>();
@@ -28,10 +32,17 @@ namespace IocLearn
             ILcukContainer childcontainer2 = container.CreateChildContainer();
             IUserBLL childduserbll2 = childcontainer2.ReSolve<IUserBLL>();
 
-            Console.WriteLine(Object.ReferenceEquals(childduserbll1, childduserbll2));
-
-
+            Console.WriteLine(Object.ReferenceEquals(childduserbll1, childduserbll2));*/
+            #endregion
+            
+            LuckContainer container = new LuckContainer();
+            container.Register<IUserService, UserService>();
+            //CustomAOPTest.show();
+             IUserService userService1 = container.ReSolve<IUserService>();
+            userService1.show1();
+            userService1 = (IUserService) userService1.CreateProxtAOP(typeof(IUserService));
+            userService1.show1();
         }
-        
+
     }
 }
