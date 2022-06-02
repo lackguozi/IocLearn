@@ -42,7 +42,13 @@ namespace IocLearn
             userService1.show1();
             userService1 = (IUserService) userService1.CreateProxtAOP(typeof(IUserService));
             userService1.show1();
+
+
+            Console.WriteLine("_____________________-----------------------begin--------");
+            PipelineTest.Test();
+            Console.WriteLine("---------------------------------------------end---------");
         }
 
     }
+   
 }

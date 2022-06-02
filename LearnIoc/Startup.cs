@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -40,7 +41,16 @@ namespace LearnIoc
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.Use((next) =>
+            {
+                return async a =>
+                {
+                    //await a.Response.WriteAsync("test");
+                    await next(a);
+                    await a.Response.WriteAsync("reer");
+                    //await a.Response.WriteAsync("test");
+                };
+            });
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -20,9 +20,9 @@ namespace LearnIoc.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IUserBLL _userbll;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUserBLL userbll)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _userbll = userbll;
+            //_userbll = userbll;
             _logger = logger;
         }
 
@@ -30,7 +30,7 @@ namespace LearnIoc.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
-            _userbll.GetUser();
+            //_userbll.GetUser();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
