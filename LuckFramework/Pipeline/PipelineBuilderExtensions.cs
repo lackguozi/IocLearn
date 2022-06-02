@@ -35,5 +35,23 @@ namespace LuckFramework.Pipeline
         {
             return builder.Use(_ => handler);
         }
+        public static IPipelineBuilder<TContext> When<TContext>(this IPipelineBuilder<TContext> builder, Func<TContext, bool> predict, Action<IPipelineBuilder<TContext>> configureAction)
+
+        {
+            return builder.Use((context, next) =>
+            {
+                if (predict.Invoke(context))
+                {
+                    var branchPipelineBuilder = builder.New();
+                    configureAction(branchPipelineBuilder);
+                    var branchPipeline = branchPipelineBuilder.Build();
+                    branchPipeline.Invoke(context);
+                }
+                else
+                {
+                    next();
+                }
+            });
+        }
     }
 }
