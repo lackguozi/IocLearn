@@ -36,6 +36,10 @@ namespace IocLearn
                        next();
                    }
                })
+               .When(context=> context.Hour <= 4, pipeline =>
+               {
+                   pipeline.Run(context=>Console.WriteLine("when succsee"));
+               })
                .Use((context, next) =>
                {
                    if (context.Hour <= 4)
