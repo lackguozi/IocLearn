@@ -30,11 +30,10 @@ namespace IocLearn
                    if (context.Hour <= 2)
                    {
                        Console.WriteLine("pass 1");
+
+                       
                    }
-                   else
-                   {
-                       next();
-                   }
+                   next();
                })
                .When(context=> context.Hour <= 4, pipeline =>
                {
