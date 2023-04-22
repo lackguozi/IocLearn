@@ -35,13 +35,13 @@ namespace IocLearn
             Console.WriteLine(Object.ReferenceEquals(childduserbll1, childduserbll2));*/
             #endregion
             
-            LuckContainer container = new LuckContainer();
+            /*LuckContainer container = new LuckContainer();
             container.Register<IUserService, UserService>();
             //CustomAOPTest.show();
              IUserService userService1 = container.ReSolve<IUserService>();
             userService1.show1();
             userService1 = (IUserService) userService1.CreateProxtAOP(typeof(IUserService));
-            userService1.show1();
+            userService1.show1();*/
 
 
             Console.WriteLine("_____________________-----------------------begin--------");

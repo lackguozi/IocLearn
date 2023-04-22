@@ -69,7 +69,7 @@ namespace LearnIoc
                 };
                
             });
-            app.UseOcelot().Wait();
+            //app.UseOcelot().Wait();
 
         }
     }

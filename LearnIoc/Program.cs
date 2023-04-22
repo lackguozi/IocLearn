@@ -22,9 +22,12 @@ namespace LearnIoc
             {
                 builder.AddJsonFile("ocelot.json", false, true);
                 })
+                
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.Configure(app => Console.WriteLine("test configure methon"));
                     webBuilder.UseStartup<Startup>();
+                    
                 });
     }
 }
