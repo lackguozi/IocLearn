@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IocLearn", "IocLearn\IocLea
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern", "DesignPattern", "{1C90C1C7-47C6-4842-9D26-AFBF4E5091AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResposibility", "ChainOfResposibility\ChainOfResposibility.csproj", "{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResposibility", "ChainOfResposibility\ChainOfResposibility.csproj", "{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnChannelWebApi", "..\LearnChannelWebApi\LearnChannelWebApi\LearnChannelWebApi.csproj", "{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{787FB03C-41A2-4570-8964-EDF6069CB607} = {BD8DA8AD-2368-4EEF-A8FA-133C4314F0DE}
 		{1C90C1C7-47C6-4842-9D26-AFBF4E5091AF} = {BD8DA8AD-2368-4EEF-A8FA-133C4314F0DE}
 		{E9AFD1B4-9094-4AE4-BC51-16D5ACC0EC02} = {1C90C1C7-47C6-4842-9D26-AFBF4E5091AF}
+		{24F6DF15-43C8-46A3-BDA8-F8D0184CF15A} = {BD8DA8AD-2368-4EEF-A8FA-133C4314F0DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF4F6BF4-FF2D-4F28-9522-CB6EA2B95CB1}
