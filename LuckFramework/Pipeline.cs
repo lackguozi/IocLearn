@@ -9,6 +9,7 @@ namespace LuckFramework
     {
         public static IPipelineBuilder<TContext> Create<TContext>(Action<TContext> completeAction)
         {
+            Console.WriteLine("test dev");
             return new PipelineBuilder<TContext>(completeAction);
         }
     }
