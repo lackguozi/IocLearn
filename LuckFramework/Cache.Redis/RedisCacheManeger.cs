@@ -10,6 +10,7 @@ namespace LuckFramework.redis
 {
     public class RedisCacheManeger : IRedisCacheManager
     {
+        private static readonly RedisValue lockToken = Environment.MachineName;
         private readonly ConnectionMultiplexer redis;
        //private readonly ILogger<RedisBasketRepository> _logger;
         private readonly IDatabase database;
@@ -235,6 +236,18 @@ namespace LuckFramework.redis
         public async Task ListClearAsync(string redisKey, int db = -1)
         {
             await database.ListTrimAsync(redisKey, 1, 0);
+        }
+
+        public async Task<bool> LockAsync(string key, TimeSpan cacheTime)
+        {
+            return await database.LockTakeAsync(key, lockToken, cacheTime);
+
+
+        }
+
+       public async Task<bool> UnLockAsync(string key)
+        {
+            return await database.LockReleaseAsync(key, lockToken);
         }
     }
 }

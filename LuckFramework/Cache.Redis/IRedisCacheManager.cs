@@ -42,6 +42,13 @@ namespace LuckFramework.redis
         Task<IEnumerable<string>> ListRangeAsync(string redisKey, int start, int stop, int db = -1);
         Task<long> ListDelRangeAsync(string redisKey, string redisValue, long type = 0, int db = -1);
         Task ListClearAsync(string redisKey, int db = -1);
-
+        /// <summary>
+        /// 加锁
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="cacheTime"></param>
+        /// <returns></returns>
+        Task<bool> LockAsync(string key, TimeSpan cacheTime);
+        Task<bool> UnLockAsync(string key);
     }
 }
